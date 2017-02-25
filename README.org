@@ -1,0 +1,18 @@
+
+
+
+
+手动安装的插件
+http://ergoemacs.org/emacs/emacs_package_system.html
+http://ergoemacs.org/emacs/emacs_installing_packages.html
+
+  clojure-mode
+  dired+ 
+
+
+安装后使用
+(require 'dired+)
+
+
+
+https://github.com/flyingmachine/emacs-for-clojure/archive/book1.zip
