@@ -34,7 +34,7 @@
     ;; allow ido usage in as many contexts as possible. see
     ;; customizations/navigation.el line 23 for a description
     ;; of ido
-    ;;ido-ubiquitous
+    ido-ubiquitous
 
     ;; Enhances M-x to allow easier execution of commands. Provides
     ;; a filterable list of possible commands in the minibuffer
@@ -45,19 +45,40 @@
     ;;projectile
 
     ;; colorful parenthesis matching
-    ;;rainbow-delimiters
+    rainbow-delimiters
 
     ;; edit html tags like sexps
-    ;;tagedit
+    tagedit
 
     ;; git integration
-    magit))
+    magit
+
+    auto-complete
+    ace-jump-mode
+    ))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
 
 (require 'dired+)
+
+;;自动补全绑定
+;;(ac-set-trigger-key "TAB")
+;;auto-complete command,激活
+;;(define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
+
+
+
+(autoload
+  'ace-jump-mode
+  "ace-jump-mode" t)
+(eval-after-load "ace-jump-mode"
+  '(ace-jump-mode-enable-mark-sync))
+
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+(define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
+
 
 ;;system-type 显示系统类型
 ;;添加定制的el
