@@ -16,3 +16,16 @@ http://ergoemacs.org/emacs/emacs_installing_packages.html
 
 
 https://github.com/flyingmachine/emacs-for-clojure/archive/book1.zip
+
+
+设置开发环境目录
+#+BEGIN_SRC 
+(setq user-emacs-directory "~/.emacs.dev.d/")
+#+END_SRC
+
+但是安装插件默认不是在这里，那一定还是在.emacs.d中的，暂时没有办法，不过这样也好，共用一下，省流量了。
+
+New packages are installed at ~/.emacs.d/elpa/.
+
+
+

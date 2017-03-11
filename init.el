@@ -68,7 +68,7 @@
     (package-install p)))
 
 (require 'dired+)
-
+(require 'init-setting)
 ;;自动补全绑定
 ;;(ac-set-trigger-key "TAB")
 ;;auto-complete command,激活
