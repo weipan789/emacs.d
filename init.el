@@ -5,7 +5,7 @@
 (when (>= emacs-major-version 24)
   (require 'package)
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-  (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
+;;  (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
   (add-to-list 'package-archives             '("tromey" . "http://tromey.com/elpa/") t)
   (add-to-list 'package-archives             '("melpa" . "http://melpa.milkbox.net/packages/") t)
   (package-initialize))
@@ -61,6 +61,7 @@
     dired+
     auto-complete
     ace-jump-mode
+    ecb
     ))
 
 (dolist (p my-packages)
