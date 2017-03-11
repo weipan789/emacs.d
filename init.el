@@ -1,14 +1,20 @@
+(defconst sanityinc-no-ssl (or (< emacs-major-version 24)
+                               (and (memq system-type '(windows-nt ms-dos))
+                                    (not (gnutls-available-p)))))
 
 (when (>= emacs-major-version 24)
   (require 'package)
-  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
   (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
   (add-to-list 'package-archives             '("tromey" . "http://tromey.com/elpa/") t)
   (add-to-list 'package-archives             '("melpa" . "http://melpa.milkbox.net/packages/") t)
   (package-initialize))
 (setq emacs-load-start-time (current-time))
+(setq user-emacs-directory "~/.emacs.dev.d/")
+;;(format "The value of fill-column is %d." fill-column)
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 ;; Tell emacs where is your personal elisp lib dir
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 ;; load the packaged named xyz.
 (load "xyz") ;; best not to include the ending “.el” or “.elc”
 
@@ -52,7 +58,7 @@
 
     ;; git integration
     magit
-
+    dired+
     auto-complete
     ace-jump-mode
     ))
