@@ -1,4 +1,6 @@
-
+#+BEGIN_SRC sh
+alias emacs-dev='emacs -q -l ~/.emacs.dev.d/init.el'
+#+END_SRC
 
 
 
