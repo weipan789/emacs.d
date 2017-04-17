@@ -91,3 +91,7 @@
 ;;添加定制的el
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
+(add-to-list 'load-path
+              "~/Documents/emacs-plugins/yasnippet")
+(require 'yasnippet)
+(yas-global-mode 1)
