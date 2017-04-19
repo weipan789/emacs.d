@@ -4,17 +4,46 @@
 
 (when (>= emacs-major-version 24)
   (require 'package)
-  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-;;  (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
-  (add-to-list 'package-archives             '("tromey" . "http://tromey.com/elpa/") t)
-  (add-to-list 'package-archives             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+  (add-to-list 'package-archives '("gnuchina"   . "http://elpa.emacs-china.org/gnu/") t)
+  (add-to-list 'package-archives '("melpachina" . "http://elpa.emacs-china.org/melpa/") t)
+  ;;  (add-to-list 'package-archives '("melpas" . "https://melpa.org/packages/") t)
   (package-initialize))
+
+
+(when (not package-archive-contents)
+  (package-refresh-contents))
+
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
+(require 'use-package)
+(setq use-package-always-ensure t)
+
+
 (setq emacs-load-start-time (current-time))
 (setq user-emacs-directory "~/.emacs.dev.d/")
+;;添加定制的el
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+
 ;;(format "The value of fill-column is %d." fill-column)
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 ;; Tell emacs where is your personal elisp lib dir
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(add-to-list 'load-path "~/Documents/emacs-plugins/yasnippet")
+
+
+
+(require 'setup-general)
+(if (version< emacs-version "24.4")
+    (require 'setup-ivy-counsel)
+  (require 'setup-helm)
+  (require 'setup-helm-gtags))
+;; (require 'setup-ggtags)
+(require 'setup-cedet)
+(require 'setup-editing)
+
+
+
 ;; load the packaged named xyz.
 (load "xyz") ;; best not to include the ending “.el” or “.elc”
 
@@ -22,41 +51,9 @@
 ;; manually with M-x package-install
 ;; Add in your own as you wish:
 (defvar my-packages
-  '(;; makes handling lisp expressions much, much easier
-    ;; Cheatsheet: http://www.emacswiki.org/emacs/PareditCheatsheet
-    paredit
-
-    ;; key bindings and code colorization for Clojure
-    ;; https://github.com/clojure-emacs/clojure-mode
-    clojure-mode
-
-    ;; extra syntax highlighting for clojure
-    clojure-mode-extra-font-locking
-
-    ;; integration with a Clojure REPL
-    ;; https://github.com/clojure-emacs/cider
-    cider
-
-    ;; allow ido usage in as many contexts as possible. see
-    ;; customizations/navigation.el line 23 for a description
-    ;; of ido
-    ido-ubiquitous
-
-    ;; Enhances M-x to allow easier execution of commands. Provides
-    ;; a filterable list of possible commands in the minibuffer
-    ;; http://www.emacswiki.org/emacs/Smex
-    smex
-
-    ;; project navigation
-    ;;projectile
-
-    ;; colorful parenthesis matching
-    rainbow-delimiters
-
-    ;; edit html tags like sexps
-    tagedit
-
-    ;; git integration
+  '(paredit clojure-mode clojure-mode-extra-font-locking cider
+    ido-ubiquitous smex
+    rainbow-delimiters tagedit
     magit
     dired+
     auto-complete
@@ -66,10 +63,12 @@
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
-    (package-install p)))
+    ;;(package-install p)
+    ))
 
-(require 'dired+)
+;;(require 'dired+)
 (require 'init-setting)
+;;(require 'init-themes)
 ;;自动补全绑定
 ;;(ac-set-trigger-key "TAB")
 ;;auto-complete command,激活
@@ -77,21 +76,20 @@
 
 
 
-(autoload
-  'ace-jump-mode
-  "ace-jump-mode" t)
-(eval-after-load "ace-jump-mode"
-  '(ace-jump-mode-enable-mark-sync))
+;;(autoload  'ace-jump-mode  "ace-jump-mode" t)
+;;(eval-after-load "ace-jump-mode"  '(ace-jump-mode-enable-mark-sync))
 
-(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
-(define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
+;;(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+;;(define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
 
 
 ;;system-type 显示系统类型
-;;添加定制的el
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+;;(require 'yasnippet)
+;;(yas-global-mode 1)
 
-(add-to-list 'load-path
-              "~/Documents/emacs-plugins/yasnippet")
-(require 'yasnippet)
-(yas-global-mode 1)
+
+;;----------------------------------------------------------------------------
+;; Variables configured via the interactive 'customize' interface
+;;----------------------------------------------------------------------------
+(when (file-exists-p custom-file)
+  (load custom-file))
