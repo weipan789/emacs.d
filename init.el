@@ -66,7 +66,7 @@
   '(paredit clojure-mode clojure-mode-extra-font-locking cider
     ido-ubiquitous smex
     rainbow-delimiters tagedit
-    ;;magit
+    magit
     ;;dired+
     auto-complete
     ace-jump-mode
@@ -100,3 +100,4 @@
 ;;(yas-global-mode 1)
 
 (provide 'init)
+(put 'upcase-region 'disabled nil)
