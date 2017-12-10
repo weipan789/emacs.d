@@ -38,7 +38,7 @@
 (add-to-list 'load-path "~/Documents/emacs-plugins/yasnippet")
 
 
-(setq my-config "/home/wp/.emacs.d/my-config.el")
+(setq my-config (expand-file-name "my-config.el" user-emacs-directory))
 (when (file-exists-p my-config)
   (load my-config))
 (when (file-exists-p custom-file)
