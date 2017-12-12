@@ -78,6 +78,11 @@
     ;;(package-install p)
     ))
 
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+;;(load-theme 'dracula t)
+;;(load-theme 'intellij t)
+;;(load-theme 'zenburn t)
+
 ;;(require 'dired+)
 (require 'init-setting)
 ;;(require 'init-themes)
