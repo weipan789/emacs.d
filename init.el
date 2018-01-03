@@ -51,7 +51,7 @@
   (require 'setup-helm)
   (require 'setup-helm-gtags))
 ;; (require 'setup-ggtags)
-(require 'setup-cedet)
+;;(require 'setup-cedet)
 ;;(require 'setup-editing)
 
 
@@ -66,6 +66,7 @@
   '(paredit clojure-mode clojure-mode-extra-font-locking cider
     ido-ubiquitous smex
     rainbow-delimiters tagedit
+    autopair highlight-parentheses 
     magit
     ;;dired+
     auto-complete
@@ -75,7 +76,7 @@
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
-    ;;(package-install p)
+   (package-install p)
     ))
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
@@ -85,6 +86,8 @@
 
 ;;(require 'dired+)
 (require 'init-setting)
+(require 'setup-paredit)
+(require 'setup-highlight-parentheses)
 ;;(require 'init-themes)
 ;;自动补全绑定
 ;;(ac-set-trigger-key "TAB")
