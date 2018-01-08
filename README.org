@@ -46,3 +46,6 @@ mkdir ~/Documents/emacs-plugins
 cd ~/Documents/emacs-plugins
 https://github.com/joaotavora/yasnippet
 #+END_SRC
+
+* package-install
+package-install只是安装插件，启用和配置还是需要自己用代码来控制的。

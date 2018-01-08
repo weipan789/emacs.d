@@ -51,8 +51,8 @@
   (require 'setup-helm)
   (require 'setup-helm-gtags))
 ;; (require 'setup-ggtags)
-;;(require 'setup-cedet)
-;;(require 'setup-editing)
+(require 'setup-cedet)
+(require 'setup-editing)
 
 
 
@@ -71,7 +71,7 @@
     ;;dired+
     auto-complete
     ace-jump-mode
-    ecb
+    ;;ecb
     ))
 
 (dolist (p my-packages)
