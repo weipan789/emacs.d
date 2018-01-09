@@ -48,13 +48,10 @@
 ;;安装插件
 ;;----------------------------------------------------------------------------
 (defvar my-packages
-  '(paredit clojure-mode clojure-mode-extra-font-locking cider
-    ido-ubiquitous smex
+  '(clojure-mode clojure-mode-extra-font-locking cider
     rainbow-delimiters tagedit
-    autopair highlight-parentheses 
+    paredit autopair highlight-parentheses
     magit
-    ;;dired+
-    auto-complete
     ace-jump-mode
     ;;ecb
     js2-mode js2-refactor xref-js2 prettier-js
