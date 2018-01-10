@@ -76,7 +76,7 @@
 ;;(require 'dired+)
 (require 'setup-paredit)
 (require 'setup-highlight-parentheses)
-
+(require 'setup-org)
 
 ;;end
 (provide 'init)
