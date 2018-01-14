@@ -53,6 +53,7 @@
     paredit autopair highlight-parentheses
     magit
     ace-jump-mode
+    rust-mode
     ;;ecb
     js2-mode js2-refactor xref-js2 prettier-js
     ))
@@ -77,6 +78,8 @@
 (require 'setup-paredit)
 (require 'setup-highlight-parentheses)
 (require 'setup-org)
+(require 'setup-rust)
 
 ;;end
 (provide 'init)
+(put 'narrow-to-region 'disabled nil)
