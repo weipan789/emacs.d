@@ -1,3 +1,4 @@
+(scroll-bar-mode -1)
 ;;导出markdown文件
 (setq org-export-backends (quote (ascii html icalendar latex md)))
 (setq org-publish-project-alist
