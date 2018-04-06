@@ -6,21 +6,25 @@
 ;;----------------------------------------------------------------------------
 (when (>= emacs-major-version 24)
   (require 'package)
-  (add-to-list 'package-archives '("gnuchina"   . "http://elpa.emacs-china.org/gnu/") t)
-  (add-to-list 'package-archives '("melpachina" . "http://elpa.emacs-china.org/melpa/") t)
-  ;;  (add-to-list 'package-archives '("melpas" . "https://melpa.org/packages/") t)
+  (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+                         ("marmalade" . "https://marmalade-repo.org/packages/")
+                         ("melpa" . "https://melpa.org/packages/")))
+  ;;(add-to-list 'package-archives '("gnuchina"   . "https://elpa.emacs-china.org/gnu/") t)
+  ;;(add-to-list 'package-archives '("melpachina" . "https://elpa.emacs-china.org/melpa-stable/") t)
+  ;;(add-to-list 'package-archives '("orgchina" . "https://elpa.emacs-china.org/org/") t)
   (package-initialize))
 
 ;;----------------------------------------------------------------------------
 ;;设置路径
 ;;----------------------------------------------------------------------------
 (setq idea-projects "~/IdeaProjects/")
+(setq user-emacs-directory "~/.emacs.d/")
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 ;;使用最新的org-mode  git clone git://orgmode.org/org-mode.git
 (add-to-list 'load-path (expand-file-name " org-mode/lisp" idea-projects))
 (add-to-list 'load-path (expand-file-name " org-mode/contrib/lisp" idea-projects))
 (setq emacs-load-start-time (current-time))
-(setq user-emacs-directory "~/.emacs.d/")
+
 ;;添加定制的el
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 ;;(format "The value of fill-column is %d." fill-column)
@@ -48,7 +52,8 @@
 ;;安装插件
 ;;----------------------------------------------------------------------------
 (defvar my-packages
-  '(clojure-mode clojure-mode-extra-font-locking cider
+  '(
+    clojure-mode clojure-mode-extra-font-locking cider
     rainbow-delimiters tagedit
     paredit autopair highlight-parentheses
     magit
