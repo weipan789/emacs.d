@@ -61,6 +61,7 @@
     rust-mode
     ;;ecb
     js2-mode js2-refactor xref-js2 prettier-js
+    markdown-mode
     ))
 
 (dolist (p my-packages)
@@ -84,7 +85,7 @@
 (require 'setup-highlight-parentheses)
 (require 'setup-org)
 (require 'setup-rust)
-
+(require 'setup-markdown)
 ;;end
 (provide 'init)
 (put 'narrow-to-region 'disabled nil)
