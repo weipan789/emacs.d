@@ -58,3 +58,5 @@ srecode-map.el
 custom-set-variables.el
 .smex-items
 ede-projects.el
+*.bk
+my-config.el

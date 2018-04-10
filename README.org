@@ -1,33 +1,13 @@
-* emacs插件及配置
-* 教程和链接
-** 手动安装的插件
+* 自己用的emacs插件及配置
+** 配置原则
+   - 以用为主，常用为主
+   - 限制插件数量，保持简洁和运行速度
+   - 不打算支持鼠标，因为有一部分时间是在非gui环境下使用的
+   
+** 介绍插件的几种安装方式
 http://ergoemacs.org/emacs/emacs_package_system.html
 http://ergoemacs.org/emacs/emacs_installing_packages.html
-
-  clojure-mode
-  dired+ 
-
-安装后使用
-(require 'dired+)
-
-https://github.com/flyingmachine/emacs-for-clojure/archive/book1.zip
-
-*** 字体
-#+BEGIN_SRC elisp
-(menu-bar-mode t)
-(insert (prin1-to-string (x-list-fonts "*")))
-
-;;M-x describe-font
-(set-default-font "-PfEd-DejaVu Sans Mono-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1")
-#+END_SRC
-
-
-*** 安装yasnippet
-#+BEGIN_SRC sh
-mkdir ~/Documents/emacs-plugins
-cd ~/Documents/emacs-plugins
-https://github.com/joaotavora/yasnippet
-#+END_SRC
-
-* package-install
-package-install只是安装插件，启用和配置还是需要自己用代码来控制的。
+*** 手动安装
+    如 =dired+= 下载并解压到加载路径中，不要忘记 =(require 'dired+)= 。
+*** 在线安装
+package-install只是安装插件，启用和配置还是需要自己用代码来控制的，还是不要忘记 =(require 'dired+)= 。

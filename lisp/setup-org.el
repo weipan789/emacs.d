@@ -1,6 +1,8 @@
 ;;自动回行
 (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
 
+;;支持导出markdown文件
+(setq org-export-backends (quote (ascii html icalendar latex md)))
 
 ;;发布
 (setq org-publish-project-alist
