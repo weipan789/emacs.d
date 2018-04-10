@@ -60,3 +60,4 @@ custom-set-variables.el
 ede-projects.el
 *.bk
 my-config.el
+*.html

@@ -5,8 +5,8 @@
    - 不打算支持鼠标，因为有一部分时间是在非gui环境下使用的
    
 ** 介绍插件的几种安装方式
-http://ergoemacs.org/emacs/emacs_package_system.html
-http://ergoemacs.org/emacs/emacs_installing_packages.html
+- http://ergoemacs.org/emacs/emacs_package_system.html
+- http://ergoemacs.org/emacs/emacs_installing_packages.html
 *** 手动安装
     如 =dired+= 下载并解压到加载路径中，不要忘记 =(require 'dired+)= 。
 *** 在线安装
