@@ -1,6 +1,7 @@
 (tool-bar-mode 0)  
-(menu-bar-mode 0)  
-;;(Scroll-bar-mode 0)
+(menu-bar-mode 0)
+(if (fboundp 'scroll-bar-mode)
+    (scroll-bar-mode -1))
 
 ;;(load-theme 'wombat t)
 ;;(set-default-font "-PfEd-DejaVu Sans Mono-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1")
