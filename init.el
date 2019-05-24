@@ -23,6 +23,8 @@
 ;;使用最新的org-mode  git clone git://orgmode.org/org-mode.git
 (add-to-list 'load-path (expand-file-name " org-mode/lisp" idea-projects))
 (add-to-list 'load-path (expand-file-name " org-mode/contrib/lisp" idea-projects))
+;;htmlize 地址 git@github.com:hniksic/emacs-htmlize.git
+(add-to-list 'load-path (expand-file-name "3cons/emacs-htmlize" idea-projects))
 (setq emacs-load-start-time (current-time))
 
 ;;添加定制的el
