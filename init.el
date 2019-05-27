@@ -7,7 +7,7 @@
 (when (>= emacs-major-version 24)
   (require 'package)
   (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
-                         ("marmalade" . "https://marmalade-repo.org/packages/")
+                         ;;("marmalade" . "https://marmalade-repo.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")))
   ;;(add-to-list 'package-archives '("gnuchina"   . "https://elpa.emacs-china.org/gnu/") t)
   ;;(add-to-list 'package-archives '("melpachina" . "https://elpa.emacs-china.org/melpa-stable/") t)
@@ -63,7 +63,7 @@
     rust-mode
     ;;ecb
     js2-mode js2-refactor xref-js2 prettier-js
-    markdown-mode
+    ;;markdown-mode
     ))
 
 (dolist (p my-packages)
@@ -87,6 +87,6 @@
 (require 'setup-highlight-parentheses)
 (require 'setup-org)
 (require 'setup-rust)
-(require 'setup-markdown)
+;;(require 'setup-markdown)
 ;;end
 (provide 'init)
